@@ -1,0 +1,25 @@
+create database cinema;
+use cinema;
+
+create table Ator(
+	id int primary key auto_increment,
+	nome varchar(100),
+    sobrenome varchar(100)    
+);
+create table Filme(
+	id int primary key auto_increment,
+	titulo varchar(100),
+	descricao varchar(100), 
+    anoLancamento Date, 
+    categoria varchar(100), 
+    adioma varchar(50), 
+    Ccassificacao varchar(50)
+);
+
+create table AtorFilme(
+	idAtor int,
+    idFilme int,
+	CONSTRAINT fk_ator FOREIGN KEY (idAtor) REFERENCES Ator(id),
+    CONSTRAINT fk_filme FOREIGN KEY (idFilme) REFERENCES Filme(id),
+    PRIMARY KEY (idAtor, idFilme)
+)
