@@ -1,6 +1,6 @@
 <?php
-    include "./Connection/connection.php";
-    include "./Assents/header.php";
+    include "../Connection/connection.php";
+    include "../Assents/header.php";
     $db = BancoDeDados::getInstance();
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -12,18 +12,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link" href="../index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./Filme/filme.php">Filmes</a>
+                    <a class="nav-link" href="../Filme/filme.php">Filmes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./Ator/ator.php">Atores</a>
+                    <a class="nav-link active" href="../Ator/ator.php">Atores</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 <?php
-    include "./Assents/footer.php"
+    include "../Assents/footer.php"
 ?>
