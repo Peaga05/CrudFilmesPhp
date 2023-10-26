@@ -16,7 +16,6 @@ class BancoDeDados
         try {
             $this->conn = new mysqli($host, $user, $pswd, $db);
             $this->conn->set_charset('utf8');
-            echo "deu bom";
         } catch (Exception $e) {
             die("Erro na conexão com MySQL! " . $e->getMessage());
         }
@@ -30,6 +29,17 @@ class BancoDeDados
             self::$instance = new BancoDeDados();   // Não existe, cria a instância 
         }
         return self::$instance;                     // Já existe, simplesmente retorna
+    }
+
+    public function executeSQL($sql_query) {
+        $result = $this->conn->query($sql_query);
+
+        if ($result === false) {
+            echo "Error executing SQL: " . $this->conn->error;
+            return false;
+        }
+
+        return true; // For successful non-SELECT queries
     }
 
     // Previne o uso de clone

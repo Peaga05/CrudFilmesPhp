@@ -12,8 +12,8 @@ create table Filme(
 	descricao varchar(100), 
     anoLancamento Date, 
     categoria varchar(100), 
-    adioma varchar(50), 
-    Ccassificacao varchar(50)
+    idioma varchar(50), 
+    classificao varchar(2)
 );
 
 create table AtorFilme(
