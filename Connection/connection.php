@@ -42,7 +42,7 @@ class BancoDeDados
         return true; // For successful non-SELECT queries
     }
 
-    public function executeUpdate($sql_query) {
+    public function executeBusca($sql_query) {
         $result = $this->conn->query($sql_query);
 
         return $result;

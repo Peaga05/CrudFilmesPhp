@@ -4,11 +4,10 @@ include "../Assents/header.php";
 $resposta = null;
 $db = BancoDeDados::getInstance();
 
-
 $filmeId = $_REQUEST["id"];
 
 $sql = "SELECT * FROM filme WHERE id=$filmeId;";
-$result = $db->executeUpdate($sql);
+$result = $db->executeBusca($sql);
 if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     $titulo = $row["titulo"];
