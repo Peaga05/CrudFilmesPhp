@@ -2,6 +2,7 @@
     include "../Connection/connection.php";
     include "../Assents/header.php";
     $db = BancoDeDados::getInstance();
+    $db->fecharConexao();
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
@@ -24,6 +25,9 @@
         </div>
     </div>
 </nav>
+<main>
+    <a class="btn btn-success" href="./filme_create.php">Cadastrar</a>
+</main>
 <?php
     include "../Assents/footer.php"
 ?>

@@ -4,6 +4,7 @@ include "../Assents/header.php";
 $resposta = null;
 $db = BancoDeDados::getInstance();
 if (isset($_POST["btn-cadastrar"])) {
+
     $titulo = $_POST["txt-titulo"];
     $descricao = $_POST["txt-descricao"];
     $data = $_POST["txt-data"];
@@ -11,6 +12,7 @@ if (isset($_POST["btn-cadastrar"])) {
     $idioma = $_POST["txt-idioma"];
     $classificao = $_POST["txt-classificacao"];
     if ($titulo != "" && $descricao != "" && $data != "" && $categoria != "" && $idioma != "" && $classificao != "") {
+
         $sql = "INSERT INTO filme (titulo,descricao,anoLancamento,categoria,idioma,classificao)
         VALUES ('$titulo','$descricao','$data','$categoria','$idioma', '$classificao');";
         $resultado = $db->executeSQL($sql);
@@ -19,16 +21,19 @@ if (isset($_POST["btn-cadastrar"])) {
         } else {
             $resposta = "Erro ao cadastrar o filme.";
         }
+
         $titulo = "";
         $descricao = "";
         $data = "";
         $categoria = "";
         $idioma = "";
         $classificao = "";
+
     }else{
         $resposta = "Preencha todos os campos!";
     }
 }
+$db->fecharConexao();
 ?>
 <div class="m-auto w-50 mt-4">
     <h1 class="text-center mb-1">Cadastrar Filme</h1>
@@ -57,7 +62,7 @@ if (isset($_POST["btn-cadastrar"])) {
             <label for="txt-classificacao">Classificação</label>
         </div>
         <div class="m-auto text-center">
-            <a id="btn-voltar" class="btn btn-outline-success w-50 m-3" name="btn-voltar" href="../index.php">Voltar</a>
+            <a id="btn-voltar" class="btn btn-outline-success w-50 m-3" name="btn-voltar" href="./filme.php">Voltar</a>
             <input type="submit" class="btn btn-success w-50" value="Cadastrar" name="btn-cadastrar" id="btn-cadastrar">
         </div>
     </form>

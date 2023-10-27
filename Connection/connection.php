@@ -42,6 +42,16 @@ class BancoDeDados
         return true; // For successful non-SELECT queries
     }
 
+    public function executeUpdate($sql_query) {
+        $result = $this->conn->query($sql_query);
+
+        return $result;
+    }
+
+    public function fecharConexao(){
+        $this->conn->close();
+    }
+
     // Previne o uso de clone
     private function __clone() {}
 }

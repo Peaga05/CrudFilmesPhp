@@ -3,7 +3,7 @@ include "../Connection/connection.php";
 include "../Assents/header.php";
 
 $db = BancoDeDados::getInstance();
-
+$db->fecharConexao();
 ?>
 <div class="m-auto w-50 mt-4">
     <h1 class="text-center mb-1">Cadastrar Filme</h1>
@@ -17,7 +17,7 @@ $db = BancoDeDados::getInstance();
             <label for="txt-sobrenome">Sobrenome</label>
         </div>
         <div class="m-auto text-center">
-            <a id="btn-voltar" class="btn btn-outline-success w-50 m-3" name="btn-voltar" href="../index.php">Voltar</a>
+            <a id="btn-voltar" class="btn btn-outline-success w-50 m-3" name="btn-voltar" href="./ator.php">Voltar</a>
             <input type="submit" class="btn btn-success w-50" value="Cadastrar" name="btn-cadastrar" id="btn-cadastrar">
         </div>
     </form>
