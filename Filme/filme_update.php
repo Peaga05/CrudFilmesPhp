@@ -60,7 +60,14 @@ $db->fecharConexao();
             <label for="txt-idioma">Idioma</label>
         </div>
         <div class="form-floating mb-2">
-            <input type="text" class="form-control" name="txt-classificacao" id="txt-classificacao" placeholder="Classificação" value='<?php echo $classificao ?>'>
+            <select class="form-select" name="txt-classificacao" id="txt-classificacao" placeholder="Classificação">
+                <option <?php if ($classificao == 'L') echo "selected" ?> value="L">Livre</option>
+                <option <?php if ($classificao == '10') echo "selected" ?>  value="10">+10</option>
+                <option <?php if ($classificao == '12') echo "selected" ?>  value="12">+12</option>
+                <option <?php if ($classificao == '14') echo "selected" ?>  value="14">+14</option>
+                <option <?php if ($classificao == '16') echo "selected" ?>  value="16">+16</option>
+                <option <?php if ($classificao == '18') echo "selected" ?>  value="18">+18</option>
+            </select>
             <label for="txt-classificacao">Classificação</label>
         </div>
         <div class="m-auto text-center">

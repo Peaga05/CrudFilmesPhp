@@ -17,9 +17,9 @@ if (isset($_POST["btn-cadastrar"])) {
         VALUES ('$titulo','$descricao','$data','$categoria','$idioma', '$classificao');";
         $resultado = $db->executeSQL($sql);
         if ($resultado) {
-            $resposta = "Filme cadastrado com sucesso.";
+            $resposta = "Filme cadastrado com sucesso!";
         } else {
-            $resposta = "Erro ao cadastrar o filme.";
+            $resposta = "Erro ao cadastrar o filme!";
         }
 
         $titulo = "";
@@ -58,7 +58,14 @@ $db->fecharConexao();
             <label for="txt-idioma">Idioma</label>
         </div>
         <div class="form-floating mb-2">
-            <input type="text" class="form-control" name="txt-classificacao" id="txt-classificacao" placeholder="Classificação">
+            <select class="form-select" name="txt-classificacao" id="txt-classificacao" placeholder="Classificação">
+                <option value="L">Livre</option>
+                <option value="10">+10</option>
+                <option value="12">+12</option>
+                <option value="14">+14</option>
+                <option value="16">+16</option>
+                <option value="18">+18</option>
+            </select>
             <label for="txt-classificacao">Classificação</label>
         </div>
         <div class="m-auto text-center">
