@@ -1,11 +1,9 @@
 <?php
 class BancoDeDados
 {
-    // Instância da classe
     private static $instance = null;
     private $conn;
 
-    // Construtor privado: só a própria classe pode invocá-lo
     private function __construct()
     {
         $host = "localhost";
@@ -20,15 +18,12 @@ class BancoDeDados
             die("Erro na conexão com MySQL! " . $e->getMessage());
         }
     }
-
-    // método estático
     public static function getInstance()
     {
-        // Já existe uma instância?
         if (self::$instance == null) {
-            self::$instance = new BancoDeDados();   // Não existe, cria a instância 
+            self::$instance = new BancoDeDados();
         }
-        return self::$instance;                     // Já existe, simplesmente retorna
+        return self::$instance; 
     }
 
     public function executeSQL($sql_query) {
@@ -38,13 +33,11 @@ class BancoDeDados
             echo "Error executing SQL: " . $this->conn->error;
             return false;
         }
-
-        return true; // For successful non-SELECT queries
+        return true;
     }
 
     public function executeBusca($sql_query) {
         $result = $this->conn->query($sql_query);
-
         return $result;
     }
 
@@ -52,7 +45,6 @@ class BancoDeDados
         $this->conn->close();
     }
 
-    // Previne o uso de clone
     private function __clone() {}
 }
 

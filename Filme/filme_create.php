@@ -59,7 +59,7 @@ $db->fecharConexao();
         </div>
         <div class="form-floating mb-2">
             <select class="form-select" name="txt-classificacao" id="txt-classificacao" placeholder="Classificação">
-                <option value="L">Livre</option>
+                <option selected value="L">Livre</option>
                 <option value="10">+10</option>
                 <option value="12">+12</option>
                 <option value="14">+14</option>
