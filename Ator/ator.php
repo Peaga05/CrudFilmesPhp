@@ -42,8 +42,7 @@ $db->fecharConexao();
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<tr><td>" . $row["nome"] . "</td><td>" . $row["sobrenome"] . "</td>";
-            echo "<td><a class='btn btn-primary m-1' href='ator_read.php?id=" . $row["id"] . "'><i class='bi bi-book'></i><a>";
-            echo "<a class='btn btn-warning m-1' href='ator_update.php?id=" . $row["id"] . "'><i class='bi bi-pencil'></i><a>";
+            echo "<td><a class='btn btn-warning m-1' href='ator_update.php?id=" . $row["id"] . "'><i class='bi bi-pencil'></i><a>";
             echo "<a class='btn btn-danger m-1' href='ator_delete.php?id=" . $row["id"] . "'><i class='bi bi-trash'></i><a>";
             echo "</td></tr>";
         }
