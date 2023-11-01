@@ -17,7 +17,7 @@ if ($result->num_rows == 1) {
 
 $sqlAtorFilme = "SELECT * FROM atorFilme WHERE idFilme=$filmeId";
 $resultAtorFilme = $db->executeBusca($sqlAtorFilme);
-if ($result->num_rows > 0) {
+if ($resultAtorFilme->num_rows > 0) {
    $erro = true;
 }
 
@@ -30,7 +30,7 @@ if (isset($_POST["btn-excluir"])) {
     if ($resultado) {
         header('Location: ./filme.php');
     } else {
-        $resposta = "Erro ao alterar o filme.";
+        $resposta = "Erro ao excluir o filme.";
     }
 }
 $db->fecharConexao();
