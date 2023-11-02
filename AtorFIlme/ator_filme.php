@@ -40,8 +40,7 @@ $db->fecharConexao();
                 <?php
                 if ($resultAtor->num_rows > 0) {
                     while ($row = $resultAtor->fetch_assoc()) {
-                        echo  $row["nome"] . $row["sobrenome"];
-                        echo '<option value="'.$row["id"].'">' . $row["nome"] . $row["sobrenome"] . '</option>';
+                        echo '<option value="'.$row["id"].'">' . $row["nome"] . " " . $row["sobrenome"] . '</option>';
                     }
                 }
                 ?>
