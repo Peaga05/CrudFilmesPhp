@@ -38,7 +38,7 @@ $db->fecharConexao()
 </nav>
 <main>
     <?php
-    echo "<div class='mt-5 w-75 m-auto'><table id='tableAtorFilme' class='table table-hover' border='1'><thead><tr><th>Titulo</th><th>Nome ator</th></tr></thead><tbody>";
+    echo "<div class='mt-5 w-75 m-auto'><table id='tableAtorFilme' class='table table-hover' border='1'><thead><tr><th>Título</th><th>Nome ator</th></tr></thead><tbody>";
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<tr><td>" . $row["titulo"] ."</td><td>" . $row["nome"] . " " . $row["sobrenome"] . "</td>";
